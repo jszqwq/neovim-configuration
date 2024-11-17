@@ -1,11 +1,32 @@
 -- telescope 配置
+--
 -- 文件检索功能
 
-local builtin = require('telescope.builtin')
-
+-- local builtin = require('telescope.builtin')
 -- 进入telescope页面会是插入模式，回到正常模式就可以用j和k来移动了
-
+--
 -- vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
 -- vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})  -- 环境里要安装ripgrep
 -- vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
 -- vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
+local actions = require "telescope.actions"
+
+return {
+    'nvim-telescope/telescope.nvim', tag = '0.1.8',  -- 文件检索
+    dependencies = { {'nvim-lua/plenary.nvim'} },
+    keys = {
+        {"<leader>ff", mode = {"n"}, "<cmd>Telescope find_files<cr>", desc = "find files"},
+        {"<leader>fg", mode = {"n"}, "<cmd>Telescope live_grep<cr>", desc = "live grep"},
+    },
+    opts = {
+        defaults = {
+            mappings = {
+                n = {
+                    ["o"] = actions.select_default,
+                },
+            },
+        },
+    },
+    enabled = true,
+}
+

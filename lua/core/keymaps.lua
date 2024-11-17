@@ -14,13 +14,14 @@ keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 -- 窗口
 keymap.set("n", "<leader>sv", "<C-w>v")
 keymap.set("n", "<leader>sh", "<C-w>s")
+keymap.set("n", "!", ":!")
 
 --消高亮
 keymap.set("n", "<leader>nh", ":nohl<CR>")
 
 -- ------------ 插件 ----------------
 -- nvim-tree
-keymap.set("n", "<leader>tr", ":NvimTreeToggle<CR>")
+-- keymap.set("n", "<leader>tr", ":NvimTreeToggle<CR>")
 
 -- buffer   缓冲栏快捷
 keymap.set("n", "<S-h>", ":bprevious<CR>")

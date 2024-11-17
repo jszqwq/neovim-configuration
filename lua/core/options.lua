@@ -1,14 +1,15 @@
 -- neovim 的基本设置文件
 
 local opt = vim.opt
+local tabsize = 4
 
 -- 行号
 opt.number = true
 opt.relativenumber = true
 
 -- 缩进
-opt.tabstop = 4
-opt.shiftwidth = 4
+opt.tabstop = tabsize
+opt.shiftwidth = tabsize
 opt.expandtab = true
 opt.autoindent = true
 
@@ -35,7 +36,11 @@ opt.smartcase = true
 -- 外观
 opt.termguicolors = true
 opt.signcolumn = "yes"
-vim.cmd[[colorscheme tokyonight]]
+vim.cmd[[colorscheme tokyonight-storm]]
+-- vim.cmd[[colorscheme vim]]
+-- require("notify").setup({
+--     background_colour = "#a0a0A0",
+-- })
 
 -- 显示回车符
 -- vim.opt.list = true

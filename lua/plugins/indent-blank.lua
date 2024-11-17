@@ -4,7 +4,16 @@ local highlight = {
     "CursorColumn",
     "Whitespace",
 }
-require("ibl").setup {
+-- require("ibl").setup {
+-- }
+
+return {                                           -- 缩进高亮
+    "lukas-reineke/indent-blankline.nvim",
+    main = "ibl",
+    ---@module "ibl"
+    ---@type ibl.config
+    opts = {},
+    enabled = true,
 }
 -- require("indentmini").setup()
 

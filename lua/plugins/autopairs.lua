@@ -6,13 +6,23 @@ if not npairs_ok then
   return
 end
 
+-- npairs.add_rules({
+--     Rule("u%d%d%d%d$", "number", "lua")
+--         :use_regex(true)
+-- })
+
+-- npairs.add_rules({
+--
+-- })
+
 npairs.setup {
-  check_ts = true,
-  ts_config = {
+    check_ts = true,
+    ts_config = {
     lua = { "string", "source" },
     javascript = { "string", "template_string" },
-  },
-  fast_wrap = {
+    },
+    enable_check_bracket_line = false,
+    fast_wrap = {
     map = '<M-e>',
     chars = { '{', '[', '(', '"', "'" },
     pattern = [=[[%'%"%)%>%]%)%}%,]]=],
@@ -23,6 +33,14 @@ npairs.setup {
     highlight_grey='Comment'
   },
 }
+
+local Rule = require('nvim-autopairs.rule')
+local cond = require('nvim-autopairs.conds')
+
+npairs.add_rules({
+    Rule("(", ")")
+        :with_pair(cond.not_inside_quote()),
+})
 
 -- 配置这个使得自动补全会把括号带上
 
