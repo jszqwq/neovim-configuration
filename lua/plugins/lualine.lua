@@ -4,7 +4,7 @@ return {
     'nvim-lualine/lualine.nvim',                -- 状态栏
     opts = {
         options = {
-            theme = 'auto'
+            theme = 'dracula'
         }
     },
     enabled = true,

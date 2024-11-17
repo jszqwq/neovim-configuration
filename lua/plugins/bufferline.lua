@@ -1,6 +1,9 @@
 -- bufferline 配置
 -- 显示缓冲分隔符
 
+local keymap = vim.keymap
+keymap.set("n", "<leader>c", "<cmd>BufferLinePickClose<cr>")
+
 return {
     "akinsho/bufferline.nvim",                  -- buffer分割线
     opts = {

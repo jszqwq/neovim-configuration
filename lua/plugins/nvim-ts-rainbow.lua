@@ -2,5 +2,5 @@
 
 return {
     "p00f/nvim-ts-rainbow" ,
-    enabled = true,
+    enabled = false,
 }

@@ -14,7 +14,8 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 local plugins = {
-    'folke/tokyonight.nvim',                    -- 主题
+--     'folke/tokyonight.nvim',                    -- 主题
+    { import = "plugins.tokyonight" },          -- 主题外观
     { import = "plugins.lualine" },             -- 底部状态栏
     { import = "plugins.nvim-tree" },           -- 文件树
     { import = "plugins.navigator"},            -- 跳转分屏
@@ -41,8 +42,8 @@ local plugins = {
     {import = "plugins.Comment"},               -- gc注释
     "windwp/nvim-autopairs",                    -- 自动补全括号
 
-    {import = "plugins.bufferline"},            -- 窗口分隔
-    {import = "plugins.gitsigns"},              -- git 标志
+    { import = "plugins.bufferline"},           -- 窗口分隔
+    { import = "plugins.gitsigns"},             -- git 标志
 
     { import = "plugins.telescope" },           -- 文件搜索
 

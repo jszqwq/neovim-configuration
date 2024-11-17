@@ -37,10 +37,8 @@ opt.smartcase = true
 opt.termguicolors = true
 opt.signcolumn = "yes"
 vim.cmd[[colorscheme tokyonight-storm]]
+vim.cmd[[colorscheme tokyonight-storm]]
 -- vim.cmd[[colorscheme vim]]
--- require("notify").setup({
---     background_colour = "#a0a0A0",
--- })
 
 -- 显示回车符
 -- vim.opt.list = true

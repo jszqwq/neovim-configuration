@@ -1,5 +1,9 @@
 -- 配置命令行居中显示插件 noice 
 
+-- require("notify").setup({
+--     background_colour = "#ffffff",
+-- })
+
 return {
     "folke/noice.nvim",
     event = "VeryLazy",
@@ -9,7 +13,12 @@ return {
         -- OPTIONAL:
         --   `nvim-notify` is only needed, if you want to use the notification view.
         --   If not available, we use `mini` as the fallback
-        "rcarriga/nvim-notify",
+        {
+            "rcarriga/nvim-notify" ,
+            opts = {
+                background_colour = "#4f587f",
+            },
+        },
     },
     opts = {
         lsp = {
@@ -28,7 +37,12 @@ return {
             inc_rename = false, -- enables an input dialog for inc-rename.nvim
             lsp_doc_border = false, -- add a border to hover docs and signature help
         },
-        background_colour = "#000000",
+        -- background_colour = "#ffffff",
     },
+    -- config = function ()
+    --     require("notify").setup({
+    --       background_colour = "#ffffff",
+    --     })
+    -- end,
     enabled = true,
 }
