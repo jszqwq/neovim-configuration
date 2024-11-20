@@ -22,6 +22,6 @@ return {
             max_file_lines = nil,
         }
     },
-    enabled = false;
+    enabled = true;
 }
 
