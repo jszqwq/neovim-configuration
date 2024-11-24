@@ -5,10 +5,12 @@ return {
     "williamboman/mason.nvim",
     dependencies = {
         "williamboman/mason-lspconfig.nvim",
-        "hrsh7th/cmp-nvim-lsp",
+        -- "hrsh7th/cmp-nvim-lsp",
         "neovim/nvim-lspconfig",
     },
+    -- priority = 1000,
     -- event = "VeryLazy",
+    -- cmd = "Mason",
     config = function ()
         -- 图标配置
         require("mason").setup({
@@ -28,11 +30,11 @@ return {
             }
         })
 
-        local capabilities = require('cmp_nvim_lsp').default_capabilities()
+        -- local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
         -- lua 
         require("lspconfig").lua_ls.setup {
-            capabilities = capabilities
+            -- capabilities = capabilities
         }
 
         -- C++ lsp
@@ -66,5 +68,6 @@ return {
         --     filetypes = {"matlab"}
         -- }
 
-    end
+    end,
+    enabled = true,
 }

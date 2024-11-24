@@ -12,8 +12,13 @@
 
 return {
     'nvim-telescope/telescope.nvim', tag = '0.1.8',  -- 文件检索
-    dependencies = { {'nvim-lua/plenary.nvim'} },
-    -- event = "VeryLazy",
+    dependencies = { 'nvim-lua/plenary.nvim' },
+    event = "VeryLazy",
+    -- event = "InsertEnter",
+    -- cmd = {
+    --     "Telescope find_files",
+    --     "Telescope live_grep",
+    -- },
     keys = {
         {"<leader>ff", mode = {"n"}, "<cmd>Telescope find_files<cr>", desc = "find files"},
         {"<leader>fg", mode = {"n"}, "<cmd>Telescope live_grep<cr>", desc = "live grep"},

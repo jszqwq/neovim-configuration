@@ -20,24 +20,21 @@ local plugins = {
     { import = "plugins.nvim-tree" },           -- 文件树
     { import = "plugins.navigator"},            -- 跳转分屏
     { import = "plugins.treesitter" },          -- 语法高亮
-    { import = "plugins.nvim-ts-rainbow" },     -- 颜色区分括号层级
+    -- { import = "plugins.nvim-ts-rainbow" },     -- 颜色区分括号层级
 
     { import = "plugins.lsp" },                 -- LSP
-    -- {                                           -- LSP语法提示
-    --     "williamboman/mason.nvim",
-    --     "williamboman/mason-lspconfig.nvim",
-    --     "neovim/nvim-lspconfig",
-    --     event = "VeryLazy",
-    -- },
 
-    -- 自动补全
     { import = "plugins.cmp" },                 -- 自动补全
 
     { import = "plugins.snippets" },            -- 代码块
+    -- {
+    --     "rafamadriz/friendly-snippets",
+    --     event = "InsertEnter",
+    -- },
     -- "hrsh7th/cmp-path",                         -- 文件路径
 
-    {import = "plugins.Comment"},               -- gc注释
-    {import = "plugins.autopairs"},             -- 自动补全括号
+    { import = "plugins.Comment" },               -- gc注释
+    { import = "plugins.autopairs" },             -- 自动补全括号
 
     { import = "plugins.bufferline"},           -- 窗口分隔
     { import = "plugins.gitsigns"},             -- git 标志
@@ -54,6 +51,8 @@ local plugins = {
     { import = "plugins.undotree" },            -- 编辑树
 
     { import = "plugins.markdown-preview" },    -- md 预览
+
+    -- { import = "plugins" },
 }
 
 -- local opts = {} -- 注意要定义这个变量

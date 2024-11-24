@@ -2,12 +2,13 @@
 -- 代码自动补全
 
 return {
-    "hrsh7th/nvim-cmp",
+    "hrsh7th/cmp-nvim-lsp",
     dependencies = {
-        "hrsh7th/cmp-nvim-lsp",
+        "hrsh7th/nvim-cmp",
         "L3MON4D3/LuaSnip",                     -- snippets引擎，不装这个自动补全会出问题
     },
-    event = "InsertEnter",
+    event = "VeryLazy",
+    -- priority = 500,
     config = function ()
         local cmp_status_ok, cmp = pcall(require, "cmp")
         if not cmp_status_ok then
