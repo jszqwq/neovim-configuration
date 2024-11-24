@@ -9,20 +9,21 @@
 -- vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})  -- 环境里要安装ripgrep
 -- vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
 -- vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
-local actions = require "telescope.actions"
 
 return {
     'nvim-telescope/telescope.nvim', tag = '0.1.8',  -- 文件检索
     dependencies = { {'nvim-lua/plenary.nvim'} },
+    -- event = "VeryLazy",
     keys = {
         {"<leader>ff", mode = {"n"}, "<cmd>Telescope find_files<cr>", desc = "find files"},
         {"<leader>fg", mode = {"n"}, "<cmd>Telescope live_grep<cr>", desc = "live grep"},
     },
     opts = {
+        -- actions = require "telescope.actions",
         defaults = {
             mappings = {
                 n = {
-                    ["o"] = actions.select_default,
+                    ["o"] = require "telescope.actions".select_default,
                 },
             },
         },

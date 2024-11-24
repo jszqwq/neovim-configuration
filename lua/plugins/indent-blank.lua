@@ -12,6 +12,8 @@ return {                                           -- 缩进高亮
     main = "ibl",
     ---@module "ibl"
     ---@type ibl.config
+
+    event = "VeryLazy",
     opts = {},
     enabled = true,
 }

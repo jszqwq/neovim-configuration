@@ -2,7 +2,7 @@
 
 return {
     "folke/tokyonight.nvim",
-    lazy = false,
+    lazy = true,
     opts = {
         -- style = "storm",
         -- light_style = "day", -- The theme is used when the background is set to light

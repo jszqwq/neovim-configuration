@@ -8,6 +8,7 @@ keymap.set("n", "<leader>bp", "<cmd>BufferLineTogglePin<cr>")
 
 return {
     "akinsho/bufferline.nvim",                  -- buffer分割线
+    event = "VeryLazy",
     opts = {
         options = {
             -- 使用 nvim 内置lsp

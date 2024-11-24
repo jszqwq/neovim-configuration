@@ -3,6 +3,7 @@
 
 return {
     "lewis6991/gitsigns.nvim",                  -- 左则git提示
+    event = "VeryLazy",
     opts = {
         signs = {
             add = { text = '+' },

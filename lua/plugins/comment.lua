@@ -3,6 +3,7 @@
 
 return {
     "numToStr/Comment.nvim",                    -- gc注释
+    event = "VeryLazy",
     opts = {},
     enabled = true,
 }

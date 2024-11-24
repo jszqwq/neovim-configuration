@@ -22,25 +22,22 @@ local plugins = {
     { import = "plugins.treesitter" },          -- 语法高亮
     { import = "plugins.nvim-ts-rainbow" },     -- 颜色区分括号层级
 
-    {                                           -- LSP语法提示
-        "williamboman/mason.nvim",
-        "williamboman/mason-lspconfig.nvim",
-        "neovim/nvim-lspconfig"
-    },
+    { import = "plugins.lsp" },                 -- LSP
+    -- {                                           -- LSP语法提示
+    --     "williamboman/mason.nvim",
+    --     "williamboman/mason-lspconfig.nvim",
+    --     "neovim/nvim-lspconfig",
+    --     event = "VeryLazy",
+    -- },
 
     -- 自动补全
-    {
-        "hrsh7th/nvim-cmp",
-        "hrsh7th/cmp-nvim-lsp",
-        "L3MON4D3/LuaSnip",                     -- snippets引擎，不装这个自动补全会出问题
-    },
+    { import = "plugins.cmp" },                 -- 自动补全
 
-    "saadparwaiz1/cmp_luasnip",
-    "rafamadriz/friendly-snippets",
-    "hrsh7th/cmp-path",                         -- 文件路径
+    { import = "plugins.snippets" },            -- 代码块
+    -- "hrsh7th/cmp-path",                         -- 文件路径
 
     {import = "plugins.Comment"},               -- gc注释
-    "windwp/nvim-autopairs",                    -- 自动补全括号
+    {import = "plugins.autopairs"},             -- 自动补全括号
 
     { import = "plugins.bufferline"},           -- 窗口分隔
     { import = "plugins.gitsigns"},             -- git 标志
@@ -50,11 +47,13 @@ local plugins = {
     { import = "plugins.flash" },               -- 光标跳转
 	{ import = "plugins.noice" },               -- 命令行
 
-    'thinca/vim-prettyprint',                   -- 打印文字
+    -- 'thinca/vim-prettyprint',                   -- 打印文字
 
     { import = "plugins.indent-blank" },        -- 竖线高亮
 
     { import = "plugins.undotree" },            -- 编辑树
+
+    { import = "plugins.markdown-preview" },    -- md 预览
 }
 
 -- local opts = {} -- 注意要定义这个变量

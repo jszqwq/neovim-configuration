@@ -27,4 +27,6 @@ keymap.set("n", "<leader>nh", ":nohl<CR>")
 keymap.set("n", "<S-h>", "<cmd>bprevious<CR>")
 keymap.set("n", "<S-l>", "<cmd>bnext<CR>")
 
+keymap.set("n", "<C-r>", "")
+
 

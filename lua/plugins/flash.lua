@@ -10,6 +10,7 @@ return {
                 motion = true,
             },
         },
+        background_colour = "#000000",
     },
     -- stylua: ignore
     keys = {

@@ -6,7 +6,7 @@
 
 return {
     "folke/noice.nvim",
-    event = "VeryLazy",
+    -- event = "VeryLazy",
     dependencies = {
         -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
         "MunifTanjim/nui.nvim",
@@ -15,6 +15,7 @@ return {
         --   If not available, we use `mini` as the fallback
         {
             "rcarriga/nvim-notify" ,
+            event = "VeryLazy",
             opts = {
                 background_colour = "#4f587f",
             },
@@ -37,7 +38,7 @@ return {
             inc_rename = false, -- enables an input dialog for inc-rename.nvim
             lsp_doc_border = false, -- add a border to hover docs and signature help
         },
-        -- background_colour = "#ffffff",
+        background_colour = "#000000",
     },
     -- config = function ()
     --     require("notify").setup({
