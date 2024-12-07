@@ -29,6 +29,7 @@ return {
             mappings = {
                 n = {
                     ["o"] = require "telescope.actions".select_default,
+                    ["q"] = require "telescope.actions".close,
                 },
             },
         },

@@ -51,16 +51,16 @@ return {
 
         -- Python lsp
         require'lspconfig'.jedi_language_server.setup{
-            -- cmd = {"jedi-language-server"}
+            cmd = {"jedi-language-server"}
         }
 
         -- cmake
         require'lspconfig'.cmake.setup{
-            -- cmd = { "cmake-language-server" },
-            -- filetypes = {"cmake"},
-            -- init_options = {buildDirectory = "build"},
-            -- -- root_dir = {root_pattern('CMakePresets.json', 'CTestConfig.cmake', '.git', 'build', 'cmake')},
-            -- single_file_support = true,
+            cmd = { "cmake-language-server" },
+            filetypes = {"cmake"},
+            init_options = {buildDirectory = "build"},
+            -- root_dir = {root_pattern('CMakePresets.json', 'CTestConfig.cmake', '.git', 'build', 'cmake')},
+            single_file_support = true,
         }
 
         -- Matlab

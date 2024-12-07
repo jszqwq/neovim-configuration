@@ -36,9 +36,11 @@ return {
             Rule("(", ")")
                 :with_pair(cond.not_inside_quote()),
         })
+        npairs.add_rules({
+            Rule("`", "`", {"md", "markdown"})
+        })
 
         -- 配置这个使得自动补全会把括号带上
-
         local cmp_autopairs = require "nvim-autopairs.completion.cmp"
         local cmp_status_ok, cmp = pcall(require, "cmp")
         if not cmp_status_ok then

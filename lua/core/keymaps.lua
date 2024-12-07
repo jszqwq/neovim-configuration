@@ -4,10 +4,11 @@ local keymap = vim.keymap
 
 -- ------------ 插入模式 ------------ 
 keymap.set("i", "jj", "<ESC>")
+-- keymap.set("i", "jjj", "j<ESC>")
 
 -- ------------ 视觉模式 ------------ 
 -- 单行或多行移动
-keymap.set("v", "J", ":m '>+1<CR>gv=gv") 
+keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
 -- ------------ 正常模式 ------------ 
@@ -29,4 +30,11 @@ keymap.set("n", "<S-l>", "<cmd>bnext<CR>")
 
 keymap.set("n", "<C-r>", "")
 
+local moo = {}
+moo.abc = function ()
+    print(1)
+end
+keymap.set("n", "moo", moo.abc)
+-- vim.cmd("call vim:lua.moo.abc()")
+-- vim.fn["command DF 1delete"]()
 
