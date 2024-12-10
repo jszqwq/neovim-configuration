@@ -2,6 +2,11 @@
 
 vim.g.undotree_DiffCommand = "FC"
 
+-- local withdrawUndo = function ()
+--
+-- end
+-- keymap.set("n", "U", withdrawUndo)
+
 return {
     'mbbill/undotree',
     keys = {

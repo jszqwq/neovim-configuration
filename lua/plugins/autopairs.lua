@@ -36,9 +36,9 @@ return {
             Rule("(", ")")
                 :with_pair(cond.not_inside_quote()),
         })
-        npairs.add_rules({
-            Rule("`", "`", {"md", "markdown"})
-        })
+        -- npairs.add_rules({
+        --     Rule("`", "`", {"md", "markdown"})
+        -- })
 
         -- 配置这个使得自动补全会把括号带上
         local cmp_autopairs = require "nvim-autopairs.completion.cmp"

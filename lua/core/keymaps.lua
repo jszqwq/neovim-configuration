@@ -18,7 +18,7 @@ keymap.set("n", "<leader>sh", "<C-w>s")
 keymap.set("n", "!", ":!")
 
 --消高亮
-keymap.set("n", "<leader>nh", ":nohl<CR>")
+keymap.set("n", "<leader>nh", "<cmd>nohl<CR>")
 
 -- ------------ 插件 ----------------
 -- nvim-tree
@@ -30,11 +30,10 @@ keymap.set("n", "<S-l>", "<cmd>bnext<CR>")
 
 keymap.set("n", "<C-r>", "")
 
-local moo = {}
-moo.abc = function ()
-    print(1)
+local abc = function ()
+    print(2)
 end
-keymap.set("n", "moo", moo.abc)
+keymap.set("n", "moo", abc)
 -- vim.cmd("call vim:lua.moo.abc()")
 -- vim.fn["command DF 1delete"]()
 
