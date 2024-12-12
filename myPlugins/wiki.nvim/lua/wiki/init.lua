@@ -6,7 +6,7 @@ local turn_path_to_win = function (path)
     for i = 1, #path do
         local p = path:sub(i, i)
         if p == '~' then
-            win_path = win_path .. "C:\\Users\\geek"
+            win_path = win_path .. "C:\\Users\\" .. wiki.userName
         elseif p == '/' then
             win_path = win_path .. "\\"
         elseif p ==  '.' and i == 1 then
@@ -49,7 +49,7 @@ local Create_file = function ()
         end
         -- vim.notify(path)
 
-        vim.cmd("<cmd>tabe " .. path)
+        vim.cmd(":tabe " .. path)
     elseif node:type() == "inline" then
         local s_l, s_r = vim.fn.getpos('v')[2], vim.fn.getpos('v')[3]
         local e_l, e_r = vim.fn.getpos('.')[2], vim.fn.getpos('.')[3]
@@ -64,13 +64,19 @@ local Create_file = function ()
         local file_text = table.concat(file_name, "")
         local file_link = string.gsub(file_text, " ", "_") .. ".md"
         file_link = "./" .. file_link
-        print(file_link)
-        print(file_link)
+
+
         local file_link_win = ""
         if wiki.isWin == true then
             file_link_win = file_link_win .. turn_path_to_win(file_link)
+        else
+            file_link_win = file_link_win .. file_link
         end
-        vim.api.nvim_input('c' .. '[' .. file_text .. '](' .. file_link .. ')<esc><cmd>tabe ' .. file_link_win .. '<CR>')
+
+        print("debug(file_link): "..file_link)
+        print("debug(file_link_win): "..file_link_win)
+
+        vim.api.nvim_input('c' .. '[' .. file_text .. '](' .. file_link .. ')<esc>:tabe ' .. file_link_win .. '<CR>')
     end
 end
 
@@ -82,6 +88,7 @@ local function setup (opt)
     wiki = vim.tbl_extend ("force", {
         path = "~/wiki/",
         isWin = true,
+        userName = "jszqwq",
         -- path = "C:\\Users\\geek\\wiki\\",
         key_wiki_open = '<leader>ww',
         key_wiki_file = '<leader>wo',
