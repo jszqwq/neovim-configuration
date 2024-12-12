@@ -9,10 +9,9 @@ require("core.options")
 -- vim.opt.runtimepath:append("$CODEPATH/learning/nvim_plugins/languageRunning")
 -- require("languageRunning").setup({})
 
--- vim.opt.runtimepath:append("$CODEPATH/learning/nvim_plugins/study")
--- local st = require("study").setup({
---     color = "green",
--- })
+vim.opt.runtimepath:append("./myPlugins/wiki.nvim")
+local wiki = require("wiki").setup({
+})
 -- print(st.info)
 -- pkg.setup()
 
