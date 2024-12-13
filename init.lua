@@ -8,7 +8,8 @@ require("core.options")
 -- vim.opt.runtimepath:append("$CODEPATH/learning/nvim_plugins/languageRunning")
 -- require("languageRunning").setup({})
 
-vim.opt.runtimepath:append("./myPlugins/wiki.nvim")
+local pluginsPath = vim.fn.stdpath("data") .. "/../nvim/myPlugins/"
+vim.opt.runtimepath:append(pluginsPath .. "wiki.nvim")
 require("wiki").setup({
     isWin = true,
     userName = "jszqwq",
