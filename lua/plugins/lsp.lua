@@ -63,6 +63,15 @@ return {
             single_file_support = true,
         }
 
+        -- rust
+        require'lspconfig'.rust_analyzer.setup{
+            cmd = { "rust-analyzer" },
+            -- filetypes = {"cmake"},
+            -- init_options = {buildDirectory = "build"},
+            -- root_dir = {root_pattern('CMakePresets.json', 'CTestConfig.cmake', '.git', 'build', 'cmake')},
+            -- single_file_support = true,
+        }
+
         -- Matlab
         -- require'lspconfig'.matlab_ls.setup{
         --     filetypes = {"matlab"}

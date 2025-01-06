@@ -53,6 +53,7 @@ local plugins = {
     { import = "plugins.markdown-preview" },    -- md 预览
 
     -- { import = "plugins" },
+    { import = "plugins.smear-cursor" },        -- 光标特效
 }
 
 -- local opts = {} -- 注意要定义这个变量

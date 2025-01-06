@@ -10,8 +10,10 @@ require("core.options")
 
 local pluginsPath = vim.fn.stdpath("data") .. "/../nvim/myPlugins/"
 vim.opt.runtimepath:append(pluginsPath .. "wiki.nvim")
+vim.opt.runtimepath:append(pluginsPath .. "fastpair.nvim")
 require("wiki").setup({
     isWin = true,
     userName = "jszqwq",
 })
+-- require("fastpair").setup({})
 
