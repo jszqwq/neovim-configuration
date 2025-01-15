@@ -62,15 +62,15 @@ local Create_file = function ()
         end
 
         local file_text = table.concat(file_name, "")
-        local file_link = string.gsub(file_text, " ", "_") .. ".md"
-        file_link = "./" .. file_link
+        local file_link_ = string.gsub(file_text, " ", "_") .. ".md"
+        local file_link = "./" .. file_link_
 
 
         local file_link_win = ""
         if wiki.isWin == true then
             file_link_win = file_link_win .. turn_path_to_win(file_link)
         else
-            file_link_win = file_link_win .. file_link
+            file_link_win = file_link_win .. wiki.path .. file_link_
         end
 
         print("debug(file_link): "..file_link)
