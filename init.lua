@@ -13,7 +13,7 @@ vim.opt.runtimepath:append(pluginsPath .. "wiki.nvim")
 vim.opt.runtimepath:append(pluginsPath .. "fastpair.nvim")
 require("wiki").setup({
     isWin = true,
-    userName = "jszqwq",
+    userName = "geek",
 })
 -- require("fastpair").setup({})
 
