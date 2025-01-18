@@ -12,6 +12,6 @@ local pluginsPath = vim.fn.stdpath("data") .. "/../nvim/myPlugins/"
 vim.opt.runtimepath:append(pluginsPath .. "wiki.nvim")
 require("wiki").setup({
     isWin = true,
-    userName = "jszqwq",
+    userName = "geek",
 })
 
