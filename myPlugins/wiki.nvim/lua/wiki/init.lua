@@ -1,3 +1,4 @@
+local check_line = require("wiki.check_line")
 local wiki = {}
 
 local turn_path_to_win = function (path)
@@ -30,58 +31,32 @@ local Open_Wiki = function ()
     vim.cmd("e " .. path .. "index.md")
 end
 
+-- 打开文件, 如果文件才存在则新建并补全当前行
 local Create_file = function ()
-    local ts_utils = require("nvim-treesitter.ts_utils")
-    local node = ts_utils.get_node_at_cursor ()
+    local line = vim.api.nvim_get_current_line()
+    local file_name = check_line.check_file_name(line)
+    local file_path = check_line.check_file_path(line)
 
-    if not node then
+    -- 如果是纯文本行, 则补充完整当前行
+    if file_name == nil or file_path == nil then
+        file_name = line
+        file_path = "./" .. file_name .. ".md"
+        vim.api.nvim_input('cc' .. '[' .. file_name .. '](' .. file_path .. ')<esc>')
+    end
+
+    if string.len(file_name) == 0 or string.len(file_path) == 0 then
+        vim.notify("the file name is illegal")
         return
     end
 
-    -- 如果光标的位置属于连接
-    if node:type() == "link_text" or node:type() == "link_destination" then
-        local line = vim.api.nvim_get_current_line()
-        local pattern = "[^.]+([^)]+)"
-        -- print(line)
-        local path = string.match(line, pattern)
-        if wiki.isWin == true then
-            path = turn_path_to_win(path)
-        end
-        -- vim.notify(path)
-
-        vim.cmd(":tabe " .. path)
-    elseif node:type() == "inline" then
-        local s_l, s_r = vim.fn.getpos('v')[2], vim.fn.getpos('v')[3]
-        local e_l, e_r = vim.fn.getpos('.')[2], vim.fn.getpos('.')[3]
-        local file_name = vim.fn.getline(s_l, e_l)
-        file_name[1] = string.sub(file_name[1], s_r)
-        if s_l == e_l then
-            file_name[#file_name] = string.sub(file_name[#file_name], 1, e_r-s_r+1)
-        else
-            file_name[#file_name] = string.sub(file_name[#file_name], 1, e_r)
-        end
-
-        local file_text = table.concat(file_name, "")
-        local file_link_ = string.gsub(file_text, " ", "_") .. ".md"
-        local file_link = "./" .. file_link_
-
-
-        local file_link_win = ""
-        if wiki.isWin == true then
-            file_link_win = file_link_win .. turn_path_to_win(file_link)
-        else
-            file_link_win = file_link_win .. wiki.path .. file_link_
-        end
-
-        print("debug(file_link): "..file_link)
-        print("debug(file_link_win): "..file_link_win)
-
-        vim.api.nvim_input('c' .. '[' .. file_text .. '](' .. file_link .. ')<esc>:tabe ' .. file_link_win .. '<CR>')
+    if wiki.isWin == true then
+        vim.api.nvim_input(":tabe " .. turn_path_to_win(file_path) .. "<CR>")
+    else
+        vim.api.nvim_input(":tabe " .. file_path .. "<CR>")
     end
 end
 
 local Open_file = function ()
-
 end
 
 local function setup (opt)
