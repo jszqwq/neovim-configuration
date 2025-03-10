@@ -52,7 +52,7 @@ local Create_file = function ()
     if wiki.isWin == true then
         vim.api.nvim_input(":tabe " .. turn_path_to_win(file_path) .. "<CR>")
     else
-        vim.api.nvim_input(":tabe " .. file_path .. "<CR>")
+        vim.api.nvim_input(":tabe " .. "~/wiki/" .. file_name .. ".md" .. "<CR>")
     end
 end
 
