@@ -33,7 +33,7 @@ local plugins = {
     -- },
     -- "hrsh7th/cmp-path",                         -- 文件路径
 
-    { import = "plugins.Comment" },               -- gc注释
+    -- { import = "plugins.Comment" },               -- gc注释
     { import = "plugins.autopairs" },             -- 自动补全括号
 
     { import = "plugins.bufferline"},           -- 窗口分隔
