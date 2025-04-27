@@ -44,7 +44,8 @@ return {
             cmd = {
                 "clangd",
                 -- '--query-driver="D:/Users/geek/Desktop/VSCode/MinGW/x86_64-12.2.0-release-posix-seh-rt_v10-rev0_2/mingw64"',
-                '-resource-dir="D:/Users/geek/Desktop/VSCode/MinGW/x86_64-12.2.0-release-posix-seh-rt_v10-rev0_2/mingw64"'
+                -- '--resource-dir="D:/Users/geek/Desktop/VSCode/MinGW/x86_64-12.2.0-release-posix-seh-rt_v10-rev0_2/mingw64"'
+                '--resource-dir="E:/code/bin/mingw64/bin"'
             },
             filetypes = { "c", "cpp", "objc", "objcpp" },
         }

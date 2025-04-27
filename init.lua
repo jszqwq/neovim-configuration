@@ -8,8 +8,9 @@ require("core.options")
 -- vim.opt.runtimepath:append("$CODEPATH/learning/nvim_plugins/languageRunning")
 -- require("languageRunning").setup({})
 
-local pluginsPath = "~/.config/nvim/myPlugins/"
-print(pluginsPath)
+local pluginsPath = vim.fn.stdpath("data").. "/../nvim/myPlugins/"
+-- local pluginsPath = "~/.config/nvim/myPlugins/"
+-- print(pluginsPath)
 vim.opt.runtimepath:append(pluginsPath .. "wiki.nvim")
 vim.opt.runtimepath:append(pluginsPath .. "fastpair.nvim")
 
